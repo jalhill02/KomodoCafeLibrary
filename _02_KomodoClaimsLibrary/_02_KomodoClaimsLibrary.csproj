@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="_02_Claims.cs" />
+    <Compile Include="Claims.cs" />
     <Compile Include="_02_KomodoClaimsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace JunkYard
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee employee1 = new Employee(1,"Ted Johnson");
+            Employee employee2 = new Employee(1,"Cindy Lopper");
+            Employee employee3 = new Employee(1,"2pac");
+            Employee employee4 = new Employee(1,"Bill Gates");
+            Employee employee5 = new Employee(1,"Jim Brown");
+
+            Queue<Employee> employees = new Queue<Employee>();
+
+
+            //Queue is based on F.I.F.O
+
+            employees.Enqueue(employee1);
+            employees.Enqueue(employee2);
+            employees.Enqueue(employee3);
+            employees.Enqueue(employee4);
+            employees.Enqueue(employee5);
+
+            employees.Dequeue();
+            employees.Dequeue();
+            employees.Dequeue();
+
+
+            //foreach (var employee in employees)
+            //{
+            //    Console.WriteLine($"{employee.Id} {employee.Name}");
+            //}
+
+            Employee employee = employees.Peek();
+            Console.WriteLine(employee.Name);
+            
+        }
+    }
+}
