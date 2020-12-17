@@ -4,7 +4,7 @@ using System.Text;
 
 namespace _03_KomodoInsuranceLibrary
 {
-    class Dictionary
+    class PossibleDictionary
     {
         private static Dictionary<string, object> DictionaryItems;
         private static void Add(string strKey, object datatType)

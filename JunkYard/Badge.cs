@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-
-
-namespace _03_KomodoInsuranceLibrary
+namespace JunkYard
 {
-    
-
-    public class Badges
+    public class Badge
     {
         public int BadgeId { get; set; }
         public List<string> DoorNames { get; set; } = new List<string>();
 
 
-        public Badges()
+        public Badge()
         {
 
         }
 
-        public Badges(int badgeId, List<DoorNames> doorName)
+        public Badge(int badgeId, List<string> doorName)
         {
             BadgeId = badgeId;
             DoorNames = doorName;

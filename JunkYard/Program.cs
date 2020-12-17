@@ -7,36 +7,54 @@ namespace JunkYard
     {
         static void Main(string[] args)
         {
-            Employee employee1 = new Employee(1,"Ted Johnson");
-            Employee employee2 = new Employee(1,"Cindy Lopper");
-            Employee employee3 = new Employee(1,"2pac");
-            Employee employee4 = new Employee(1,"Bill Gates");
-            Employee employee5 = new Employee(1,"Jim Brown");
+            Badge badgeA = new Badge(1, new List<string> { "A1", "A2" });
+            Badge badgeB = new Badge(100, new List<string> { "A1", "A2", "B1" });
+            Badge badgeC = new Badge(10000, new List<string> { "A1", "A2", "0001" });
 
-            Queue<Employee> employees = new Queue<Employee>();
+            //dictionary is a key/value pair
+            //key apple <string>
+            //value definition <string>  Dictionary<string,string>
+
+            Dictionary<int, Badge> badges = new Dictionary<int, Badge>();
+            badges.Add(1, badgeA);
+            badges.Add(2, badgeB);
+            badges.Add(3, badgeC);
+
+            foreach (var pair in badges)  // access both key and value
+            {
+                Console.WriteLine($"badge Key:{pair.Key}");
+                Console.WriteLine($"BadgeIds:{pair.Value.BadgeId}");
+            }
+
+            //only can loop threw the keys in the situation access only key
+            foreach (var key in badges.Keys)
+            {
+                if (key == 2)
+                {
+                    Console.WriteLine(key);
+
+                }
+            }
 
 
-            //Queue is based on F.I.F.O
+            foreach (var value in badges.Values) // only access value
+            {
+               
+                    DisplayBadgeInfo(value);
+                
+            }
 
-            employees.Enqueue(employee1);
-            employees.Enqueue(employee2);
-            employees.Enqueue(employee3);
-            employees.Enqueue(employee4);
-            employees.Enqueue(employee5);
-
-            employees.Dequeue();
-            employees.Dequeue();
-            employees.Dequeue();
-
-
-            //foreach (var employee in employees)
-            //{
-            //    Console.WriteLine($"{employee.Id} {employee.Name}");
-            //}
-
-            Employee employee = employees.Peek();
-            Console.WriteLine(employee.Name);
-            
+            //helper method
+            void DisplayBadgeInfo(Badge badge)
+            {
+                Console.WriteLine($"Badge Id: {badge.BadgeId}");
+                foreach (var door in badge.DoorNames)
+                {
+                    Console.WriteLine($"Door Name:{door}");
+                }
+                    Console.WriteLine("*****************");
+            }
+            Console.ReadKey();
         }
     }
 }

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace _03_KomodoInsuranceConsoleApp
 {
-    class Progroam_Ui
+    class Program_UI
     {
+        
     }
 }

@@ -4,12 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-namespace _03_KomodoInsuranceLibrary
+namespace _03_KomodoInsuranceRepository
 {
-    
-
     public class Badges
     {
         public int BadgeId { get; set; }
@@ -21,7 +17,7 @@ namespace _03_KomodoInsuranceLibrary
 
         }
 
-        public Badges(int badgeId, List<DoorNames> doorName)
+        public Badges(int badgeId, List<string> doorName)
         {
             BadgeId = badgeId;
             DoorNames = doorName;
