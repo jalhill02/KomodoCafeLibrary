@@ -78,11 +78,11 @@ namespace _02_KomodoClaimsLibrary
 
         public bool IsValidCalculaiton(DateTime DateOfIncident, DateTime DateOfClaim)
         {
-            var answer = DateOfIncident - DateOfClaim;
-            var comparison = answer.Add(TimeSpan.FromDays(30));
+            var answer = DateOfClaim - DateOfIncident ;
+            var comparison = TimeSpan.FromDays(answer.Days);
             
             //this is just to check...can be deleted if you want
-            Console.WriteLine($"answer ={answer}");
+            Console.WriteLine($"answer ={comparison.Days}");
             if (comparison.Days <=30 && comparison.Days>0 )
             {
                 return true;
